@@ -1,0 +1,5 @@
+select users.first_name, users.last_name, users2.first_name as friend_first, users2.last_name as friend_last
+
+from users left join friendships on users.id = friendships.friend_id left join users as users2 on users2.id = friendships.user_id
+
+order by users.first_name
