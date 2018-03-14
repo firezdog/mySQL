@@ -14,7 +14,7 @@ def create():
         'last_name':  request.form['last_name'],
         'occupation': request.form['occupation']
     }
-    print(mysql.query_db(query, data))
+    mysql.query_db(query, data)
     return redirect('/')
 @app.route('/friends/<friend_id>')
 def show(friend_id):

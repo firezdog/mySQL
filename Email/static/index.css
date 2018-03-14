@@ -1,0 +1,56 @@
+.message {
+    width: 250px;
+    outline: 1px solid black;
+    margin: 10px;
+    text-align: center;
+}
+
+#error {
+    background-color: red;
+}
+
+#success {
+    text-align: left;
+    background-color: green;
+}
+
+.message p {
+    padding-top: 1%;
+}
+
+#error p {
+    color: white;
+    font-weight: bold;
+}
+
+#success p {
+    padding: 10px;
+    color: yellowgreen;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+form div button{
+    margin: 10px;
+    position: relative;
+    left: 155px;
+}
+
+.display-off {
+    display: none;
+}
+
+.display-on {
+    display: default;
+}
+
+td,th {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+table + div {
+    margin-top: 10px;
+}
