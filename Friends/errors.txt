@@ -1,0 +1,15 @@
+1. NameError: global name 'SQLAlchemy' is not defined 
+    -- must make sure correct libraries are imported.
+
+2. File "/mnt/c/Users/Alex Leibowitz/Desktop/Documents/CodingDojo/SQL/Friends/mysqlconnection.py", line 9, in __init__'database': dbd, # we got db as an argument
+NameError: global name 'dbd' is not defined
+    -- 'database' in __init__ must correspond to exisitng database we want to query
+
+3. OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (111)") (Background on this error at: http://sqlalche.me/e/e3q8)
+    -- port must be correct
+
+4. TypeError: 'NoneType' object is not iterable (when requesting info through website)
+    -- make sure query[0:6] / query has correct range in definitions. (string from query begins with the command being tested for)
+
+5. ImportError: cannot import name MySQLConnector
+    -- mySqlConnector function at end must return a connection for the main server to use.

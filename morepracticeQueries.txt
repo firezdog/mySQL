@@ -1,3 +1,0 @@
-select first_name, last_name, email, sum(amount) as total_bill from billing
-
-join clients on clients.id = billing.clients_id group by clients.id
