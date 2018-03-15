@@ -4,9 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Congratulations</title>
+    <title>Welcome to the Wall</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='success.css')}}"
 </head>
 <body>
-    <h1>You were logged in.</h1>
+    <div id="navbar">
+        <h1>The Wall</h1>
+        <div id="navbar-right">
+            <p>Welcome {{name}}</p>
+            <a href="/logout"><p>log off</p></a>
+        </div>
+    </div>
+    <div id="form">
+        <form method="post" action="/message">
+            <div class="row">
+                <p class="cell">Post a message</p>
+            </div>
+            <div class="row">
+                <textarea name="message" class="cell" rows="5" cols="200"></textarea>
+            </div>
+            <div class="row">
+                <div class="cell flashes">
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+                    {{ message }}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+                </div>
+                <button class="cell">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div id="messages">
+{% for message in messages %}
+        <div class="message">
+            <p class="author">{{ message['first_name'] }} {{ message['last_name'] }} - {{ message['created_at'].strftime('%c') }}</p>
+            <p class="message_text">{{ message['message'] }}</p>
+    {% for comment in comments %}
+        {% if comment.message_id == message.id %}
+            <div class="comment">
+                <p class="author">{{ comment['first_name'] }} {{ comment['last_name'] }} -- {{ comment['created_at'].strftime('%c') }}</p>
+                <p class="message_text">{{ comment['comment'] }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+        </div> 
+        <div class="comment_form">
+            <form method="post" action="/comment">
+                <div class="row">
+                    <p class="cell">Post a comment</p>
+                </div>
+                <div class="row">
+                    <textarea name="comment" class="cell" rows="5" cols="200"></textarea>
+                </div>
+                <div class="row">
+                    <div class="cell"><input type="hidden" name="message" value="{{message['id']}}"></div>
+                    <button class="cell">Submit</button>
+                </div>
+            </form>
+        </div>
+{% endfor %}
+    </div>
 </body>
 </html>

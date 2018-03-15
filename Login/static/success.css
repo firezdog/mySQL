@@ -1,0 +1,86 @@
+#navbar {
+    border-bottom: 3px solid black;
+
+}
+
+#navbar h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#navbar h1, #navbar p {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-right: 0
+}
+
+#navbar-right {
+    position: absolute;
+    right: 100px;
+    top: 5px;
+}
+
+.row {
+    display: table-row
+}
+
+.cell {
+    display: table-cell
+}
+
+#form {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+#form p {
+    padding: 20px 0 10px 10px;
+}
+
+#form textarea {
+    display: table-cell;
+    margin-left: 20px;
+}
+
+#form button {
+    display: table-cell;
+    margin-left: -50px;
+    margin-top: 10px;
+}
+
+.flashes {
+    color: red
+}
+
+.message_text {
+    margin-top: 0;
+    margin-left: 3rem;
+    margin-right: 1%;
+}
+
+.comment {
+    margin-left: 6rem;
+}
+
+.comment_form {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.comment_form p {
+    padding: 20px 0 10px 10px;
+}
+
+.comment_form textarea {
+    display: table-cell;
+    margin-left: 20px;
+}
+
+.comment_form button {
+    display: table-cell;
+    margin-left: -50px;
+    margin-top: 10px;
+}
