@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login or Register</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}"
+</head>
+<body>
+    <div class="formbox">
+        <h1>Login:</h1>
+        <form action="/login" method="POST">
+            <div class="row">
+                <label class="cell" for="email">Email</label>
+                <input class="cell" type="text" name="login" id="email">
+            </div>
+            <div class="row">
+                <label class="cell" for="password">Password</label>
+                <input class="cell" type="password" name="password" id="password">
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <button class="cell">Submit</button>
+            </div>
+        </form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for category,message in messages %}
+            {% if category == "login" %}
+            <li>{{ message }}</li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+    </div>
+    <div class="formbox" id="register">
+        <h1>Register</h1>
+        <form method="POST" action="/register">
+            <div class="row">
+                <label class="cell" for="first_name">First Name</label>
+                <input class="cell" type="text" name="first_name" id="first_name">
+            </div>
+            <div class="row">
+                <label class="cell" for="last_name">Last Name</label>
+                <input class="cell" type="text" name="last_name" id="last_name">
+            </div>
+            <div class="row">
+                <label class="cell" for="reg_email">Email</label>
+                <input class="cell" type="text" name="reg_email" id="reg_email">
+            </div>
+            <div class="row">
+                <label class="cell" for="reg_password">Password</label>
+                <input class="cell" type="password" name="password" id="reg_password">
+            </div>
+            <div class="row">
+                <label class="cell" for="confirm_password">Confirm</label>
+                <input class="cell" type="password" name="confirm_password" id="confirm_password">
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <button class="cell">Submit</button>
+            </div>
+        </form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for category,message in messages %}
+            {% if category == "registration" %}
+            <li>{{ message }}</li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+    </div>
+</body>
+</html>

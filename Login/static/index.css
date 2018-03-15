@@ -1,0 +1,40 @@
+.formbox {
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    vertical-align: top
+}
+
+#register {
+    background-color: rgb(39, 209, 138);
+}
+
+h1 {
+    text-align: center
+}
+
+form {
+    margin: 0 20%;
+}
+
+.row {
+    display: table-row;
+}
+
+label {
+    text-align: right;
+}
+
+button {
+    float: right;
+}
+
+.cell {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: table-cell;
+}
+
+.flashes {
+    color: brown
+}
